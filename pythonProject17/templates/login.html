@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 style="display:inline; margin-top: 50px"><img src="https://yastatic.net/s3/lyceum/content/images/second-year/web/MARS-2-7.png">Аварийный доступ</h3>
+<form style="width:60%" action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.if_of_astro.label }}<br>
+        {{ form.if_of_astro(class="form-control") }}<br>
+        {% for error in form.if_of_astro.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.password_of_astro.label }}<br>
+        {{ form.password_of_astro(class="form-control", type="password") }}<br>
+        {% for error in form.password_of_astro.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.id_of_capitan.label }}<br>
+        {{ form.id_of_capitan(class="form-control") }}<br>
+        {% for error in form.id_of_capitan.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    </p>
+    <p>
+        {{ form.password_of_capitan.label }}<br>
+        {{ form.password_of_capitan(class="form-control", type="password") }}<br>
+        {% for error in form.password_of_capitan.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+</form>
+{% endblock %}
